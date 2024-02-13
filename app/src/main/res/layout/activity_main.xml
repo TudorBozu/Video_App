@@ -6,34 +6,53 @@
     android:layout_height="match_parent"
     android:background="@color/background"
     tools:context=".MainActivity">
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <VideoView
-        android:id="@+id/view"
-        android:layout_width="409dp"
-        android:layout_height="313dp"
+        <VideoView
+            android:id="@+id/video_view"
+            android:layout_width="wrap_content"
+            android:layout_height="268dp" />
+
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/buttonreplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#436850"
+        android:text="Replay"
+        android:textSize="20dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        app:layout_constraintVertical_bias="0.299" />
+        app:layout_constraintVertical_bias="0.809" />
 
     <Button
         android:id="@+id/buton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:text="Play me"
-        android:textSize="20dp"
-        android:backgroundTint="#436850"
-        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:backgroundTint="#436850"
+        android:text="Play me"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.152"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.746" />
+        app:layout_constraintVertical_bias="0.809" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
