@@ -15,12 +15,13 @@ public class MainActivity extends AppCompatActivity {
 
     private VideoView mVideoView;
     private int mVideoPosition = 0;
-
+   Boolean isPlay = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button buttonPlayVideo = findViewById(R.id.buton);
+        Button buttonPlayVideo = findViewById(R.id.play);
+        Button buttonreplay = findViewById(R.id.replay);
         mVideoView = findViewById(R.id.view);
         getWindow().setFormat(PixelFormat.UNKNOWN);
 
@@ -28,11 +29,22 @@ public class MainActivity extends AppCompatActivity {
         String uriPath = "android.resource://" + getPackageName() + "/" + R.raw.ed;
         Uri uri = Uri.parse(uriPath);
         mVideoView.setVideoURI(uri);
-
+buttonreplay.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        mVideoView.resume();
+    }
+});
         buttonPlayVideo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mVideoView.start();
+                if(isPlay){
+                    isPlay = false;
+                    mVideoView.pause();
+                }else{
+                    isPlay=true;
+                    mVideoView.start();
+                }
             }
         });
         if (savedInstanceState != null) {
